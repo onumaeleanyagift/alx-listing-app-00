@@ -1,5 +1,5 @@
 export interface PropertyProps {
- name: string;
+  name: string;
   address: {
     state: string;
     city: string;
@@ -15,4 +15,10 @@ export interface PropertyProps {
   };
   image: string;
   discount: string;
-};
+}
+
+export interface PillProps {
+  label: string;
+  onClick?: () => void;
+  isActive?: boolean;
+}
