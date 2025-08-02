@@ -1,8 +1,9 @@
-// pages/index.tsx
 import Image from "next/image";
 import { IMAGES } from "../../constants/images";
 import Pill from "../../components/Pill";
 import { useState } from "react";
+import { PROPERTYLISTINGSAMPLE } from "../../constants/index";
+import PropertyCard from "../../components/PropertyCard";
 
 const filters = [
   "Top Villa",
@@ -17,7 +18,6 @@ export default function Home() {
 
   return (
     <div>
-      {/* Hero Section */}
       <section className="relative w-full h-[70vh]">
         <Image
           src={IMAGES.HERO_BG}
@@ -45,6 +45,26 @@ export default function Home() {
               label={filter}
               isActive={activeFilter === filter}
               onClick={() => setActiveFilter(filter)}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="px-4 py-10 bg-white">
+        <h2 className="text-2xl font-bold text-center mb-6">
+          Popular Listings
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
+          {PROPERTYLISTINGSAMPLE.map((index) => (
+            <PropertyCard
+              name={index.name}
+              address={index.address}
+              rating={index.rating}
+              category={index.category}
+              offers={index.offers}
+              price={index.price}
+              discount={index.discount}
+              image={index.image}
             />
           ))}
         </div>
