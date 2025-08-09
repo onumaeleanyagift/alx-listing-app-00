@@ -15,10 +15,20 @@ export interface PropertyProps {
   };
   image: string;
   discount: string;
+  description: string;
+  reviews: any[];
 }
 
 export interface PillProps {
   label: string;
   onClick?: () => void;
   isActive?: boolean;
+}
+
+export interface BookingSectionProps {
+  price: number;
+}
+
+export interface ReviewSectionProps {
+  reviews: any[];
 }
