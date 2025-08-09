@@ -18,4 +18,4 @@ export default function PropertyPage() {
       <ReviewSection reviews={property.reviews} />
     </div>
   );
-}
+} 
